@@ -1,4 +1,4 @@
-package com.dolszewski.blog;
+package com.naggi.springboot.lazyinit;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,11 +17,11 @@ class ResourceLoader {
 
     @PostConstruct
     void initHeavyLoading() throws InterruptedException {
-        log.info("Loading start");
+        log.info("Loading start........");
         // time-consuming execution
         Thread.sleep(10_000);
         resources = loadResources();
-        log.info("Loading end");
+        log.info("Loading end......");
     }
 
     private List<Term> loadResources() {

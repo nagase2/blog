@@ -1,4 +1,4 @@
-package com.dolszewski.blog;
+package com.naggi.springboot.lazyinit;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
