@@ -1,0 +1,51 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.7.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+jar {
+    baseName = 'gs-spring-boot'
+    version =  '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-devtools")
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+    compile 'org.projectlombok:maven-lombok-plugin:0.9.3.1'
+    compile "org.projectlombok:lombok:1.16.2"
+    compile 'org.postgresql:postgresql:9.4-1201-jdbc41'
+    compile 'com.h2database:h2'
+    compile 'org.lazyluke:log4jdbc-remix:0.2.7'
+    compile 'org.springframework.boot:spring-boot-maven-plugin:1.2.3.RELEASE'
+    compile 'org.webjars:bootstrap:3.2.0'
+    compile 'org.flywaydb:flyway-core'
+    compile 'org.springframework.boot:spring-boot-starter-security'
+
+
+    compile 'javax.servlet:jstl:1.2'
+    compile "org.codehaus.groovy:groovy-all:2.3.11"
+    compile 'org.hudsonci.plugins:dry:2.28'
+
+    compile 'com.fasterxml.jackson.core:jackson-databind'
+    testCompile("junit:junit")
+}
+

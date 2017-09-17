@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.naggi.springboot.lazyinit.data.Greeting;
 import com.naggi.springboot.lazyinit.service.HelloService;
 import com.naggi.springboot.lazyinit.service.LazyService;
+import com.naggi.springboot.lazyinit.service.heavyservice.HeavyService;
 
 @RestController
 public class LazyController {
@@ -19,6 +20,8 @@ public class LazyController {
 	
 	@Autowired
 	private LazyService lazyService;
+	@Autowired
+	private HeavyService heavyService;
 	@Autowired
 	private Greeting gree;
 	

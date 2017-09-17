@@ -1,10 +1,8 @@
-package com.naggi.springboot.lazyinit;
+package com.naggi.springboot.lazyinit.data;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
-
-import com.naggi.springboot.lazyinit.data.Greeting;
 
 @Configuration
 @Lazy
@@ -17,3 +15,4 @@ public class BeanConfig {
 		return new Greeting();
 	}
 }
+
