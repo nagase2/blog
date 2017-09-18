@@ -1,4 +1,4 @@
-package com.naggi.springboot.lazyinit;
+package com.naggi.springboot.lazyinit.config;
 
 //@Configuration
 //@EnableTransactionManagement

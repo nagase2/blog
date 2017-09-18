@@ -1,5 +1,6 @@
 package com.naggi.springboot.lazyinit.controller;
 
+import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
 import org.slf4j.Logger;
@@ -9,18 +10,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.naggi.springboot.lazyinit.data.Customer;
 import com.naggi.springboot.lazyinit.data.Greeting;
-import com.naggi.springboot.lazyinit.service.HelloService;
+import com.naggi.springboot.lazyinit.service.CustomerService;
+import com.naggi.springboot.lazyinit.service.EagerLoadService;
 import com.naggi.springboot.lazyinit.service.LazyService;
 
 @RestController
-public class GreetingController {
+public class GreetingRestController {
 
 	@Autowired
-	private HelloService hService;
-
+	private EagerLoadService hService;
+	@Autowired
+	CustomerService customerService;
 	
-	private static final Logger log = LoggerFactory.getLogger(GreetingController.class);
+	private static final Logger log = LoggerFactory.getLogger(GreetingRestController.class);
 	
     private static final String template = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong();
@@ -45,5 +49,10 @@ public class GreetingController {
     	return hService.sayHello("yoshi");
     }
   
+    @RequestMapping("/customerlist")
+    public List<Customer> getCustomerList(){
+    	log.info("customer list has been called");
+    	return customerService.findAll();
+    }
     
 }

@@ -7,11 +7,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Lazy(false)
-public class HelloService {
+public class EagerLoadService {
 	
-	private static final Logger log = LoggerFactory.getLogger(HelloService.class);
+	private static final Logger log = LoggerFactory.getLogger(EagerLoadService.class);
 	
-	public HelloService() {
+	public EagerLoadService() {
 		log.warn("hello service constracter called, this class will be loaded eagaly all the time.");
 		try {
 			Thread.sleep(2_000);
@@ -28,5 +28,6 @@ public class HelloService {
 	public String sayHello(String clientName){
 		log.info("say hello method has been called.");
 		return "hello!!!!!!!"+ clientName;
+		
 	}
 }

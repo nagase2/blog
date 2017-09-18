@@ -4,14 +4,15 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 
-import com.naggi.springboot.lazyinit.controller.GreetingController;
+import com.naggi.springboot.lazyinit.controller.GreetingRestController;
 import com.naggi.springboot.lazyinit.data.Greeting;
-import com.naggi.springboot.lazyinit.service.HelloService;
+import com.naggi.springboot.lazyinit.service.EagerLoadService;
 
 
 //@SpringBootApplication
 
 @ComponentScan(basePackageClasses = LazyApplication.class,lazyInit=true)
+//@ComponentScan(basePackageClasses = LazyApplication.class)
 //@ComponentScan(basePackageClasses = {LazyApplication.class,HelloService.class,GreetingController.class},lazyInit=true)
 @EnableAutoConfiguration(
 //		exclude = {

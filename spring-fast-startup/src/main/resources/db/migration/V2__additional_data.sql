@@ -39,7 +39,7 @@ CREATE TABLE content (
 
 CREATE TABLE content_detail (
  detail_id bigint NOT NULL PRIMARY KEY,
- content_contentId bigint, 
+ content_content_id bigint, 
  detail_name VARCHAR(100),
  price INT,
  
