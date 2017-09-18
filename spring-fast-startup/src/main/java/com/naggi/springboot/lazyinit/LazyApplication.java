@@ -13,18 +13,8 @@ import com.naggi.springboot.lazyinit.service.EagerLoadService;
 
 @ComponentScan(basePackageClasses = LazyApplication.class,lazyInit=true)
 //@ComponentScan(basePackageClasses = LazyApplication.class)
-//@ComponentScan(basePackageClasses = {LazyApplication.class,HelloService.class,GreetingController.class},lazyInit=true)
 @EnableAutoConfiguration(
-//		exclude = {
-//      DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class, JpaRepositoriesAutoConfiguration.class
-//}
 )
-//@EnableTransactionManagement
-//@ImportResource({ "classpath:/config/transaction-management.xml", "classpath:/config/method-invocation-trace.xml" })
-//@EnableJpaAuditing(auditorAwareRef = AuditConfiguration.TTC_AUDIT_AWARE,
-//      dateTimeProviderRef = AuditConfiguration.TTC_DATETIME_PROVIDER)
-//@Import({ AuditConfiguration.class })
-//@EnableSpringDataWebSupport
 public class LazyApplication {
 
     public static void main(String[] args) {

@@ -11,7 +11,7 @@ import com.naggi.springboot.lazyinit.data.Customer;
 
 @Repository
 @Transactional
-public interface CustomerRepository extends JpaRepository<Customer, Integer>,ContentRepositoryCustom {
+public interface CustomerRepository extends JpaRepository<Customer, Integer>,CustomerRepositoryCustom {
 
   // @Query(value="select id,first_name,last_name,address from customers order by first_name desc",nativeQuery=true)
   @Query("SELECT a FROM Customer a ORDER BY a.firstName, a.lastName")

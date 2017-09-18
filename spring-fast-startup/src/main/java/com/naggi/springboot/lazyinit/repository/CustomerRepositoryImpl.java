@@ -7,14 +7,14 @@ import org.springframework.context.annotation.Lazy;
 import com.naggi.springboot.lazyinit.controller.GreetingRestController;
 
 
-public class ContentRepositoryImpl implements ContentRepositoryCustom{
+public class CustomerRepositoryImpl implements CustomerRepositoryCustom{
 
-	private static final Logger log = LoggerFactory.getLogger(ContentRepositoryImpl.class);
+	private static final Logger log = LoggerFactory.getLogger(CustomerRepositoryImpl.class);
 	
-		public ContentRepositoryImpl() {
-			log.info("★content repository constaracter called.");
+		public CustomerRepositoryImpl() {
+			log.info("★content repository constracter called.");
 			try {
-				final int LOOP_MAX = 10;
+				final int LOOP_MAX = 5;
 				for(int i=0;i<=LOOP_MAX;i++){
 					Thread.sleep(1_000);
 					log.warn("wait until"+ (LOOP_MAX-i) +"seconds");

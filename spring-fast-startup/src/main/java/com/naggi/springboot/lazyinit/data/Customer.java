@@ -42,6 +42,10 @@ public class Customer {
   @JoinColumn(nullable = true, name = "username")
   // Joincolumnで外部キーのカラム名を指定
   private User user;
+  
+  public Customer(){
+	  System.out.println("★customer entity constractor");
+  }
 
   public Integer getId() {
 		return id;
