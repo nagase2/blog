@@ -1,5 +1,6 @@
 package com.naggi.springboot.lazyinit.repository;
 
+import org.springframework.core.annotation.Order;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -11,6 +12,7 @@ import com.naggi.springboot.lazyinit.data.Customer;
 
 @Repository
 @Transactional
+@Order(10)
 public interface CustomerRepository extends JpaRepository<Customer, Integer>,CustomerRepositoryCustom {
 
   // @Query(value="select id,first_name,last_name,address from customers order by first_name desc",nativeQuery=true)

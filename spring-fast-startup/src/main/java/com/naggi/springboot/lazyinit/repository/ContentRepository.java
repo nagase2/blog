@@ -3,6 +3,7 @@ package com.naggi.springboot.lazyinit.repository;
 import java.util.List;
 
 import org.springframework.context.annotation.Lazy;
+import org.springframework.core.annotation.Order;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
@@ -20,6 +21,7 @@ import com.naggi.springboot.lazyinit.data.Content;
 @Repository
 @Transactional
 @Lazy()
+@Order(2)
 public interface ContentRepository extends JpaRepository<Content, Long>,JpaSpecificationExecutor<Content> {
 	
 
