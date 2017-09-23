@@ -23,27 +23,27 @@ Insert into customers(id,first_name,last_name) values(8,'V_3 data','Newdata');
 Insert into customers(id,first_name,last_name) values(9,'V_3 data','Newdata');
 
 
-INSERT INTO content (content_id, item_id,count,content_name,comment,version,updated_function,created_function,delete_flag) 
+INSERT INTO content (content_id, my_item_id,count,content_name,comment,version,updated_function,created_function,delete_flag) 
 VALUES (1,2,999,'aaa','this is comment',3,'com.controller.abc', 'com.controller.bcd',false);
-INSERT INTO content (content_id, item_id,count,content_name,comment,version,updated_function,created_function,delete_flag) 
+INSERT INTO content (content_id, my_item_id,count,content_name,comment,version,updated_function,created_function,delete_flag) 
 VALUES (2,2,777,'this is name','this is comment',2,'com.controller.abc', 'com.controller.bcd',false);
-INSERT INTO content (content_id, item_id,count,content_name,comment,version,updated_function,created_function,delete_flag) 
+INSERT INTO content (content_id, my_item_id,count,content_name,comment,version,updated_function,created_function,delete_flag) 
 VALUES (3,3,888,'this is name','this is comment',4,'com.controller.abc', 'com.controller.bcd',false);
-INSERT INTO content (content_id, item_id,count,content_name,comment,version,updated_function,created_function,delete_flag) 
+INSERT INTO content (content_id, my_item_id,count,content_name,comment,version,updated_function,created_function,delete_flag) 
 VALUES (4,4,888,'aaa','this is comment',4,'com.controller.abc', 'com.controller.bcd',false);
-INSERT INTO content (content_id, item_id,count,content_name,comment,version,updated_function,created_function,delete_flag) 
+INSERT INTO content (content_id, my_item_id,count,content_name,comment,version,updated_function,created_function,delete_flag) 
 VALUES (5,1,888,'aaa','this is comment',4,'com.controller.abc', 'com.controller.bcd',false);
-INSERT INTO content (content_id, item_id,count,content_name,comment,version,updated_function,created_function,delete_flag) 
+INSERT INTO content (content_id, my_item_id,count,content_name,comment,version,updated_function,created_function,delete_flag) 
 VALUES (6,1,888,'aaa','this is comment',1,'com.controller.abc', 'com.controller.bcd',false);
-INSERT INTO content (content_id, item_id,count,content_name,comment,version,updated_function,created_function,delete_flag) 
+INSERT INTO content (content_id, my_item_id,count,content_name,comment,version,updated_function,created_function,delete_flag) 
 VALUES (7,1,888,'aaa','this is comment',1,'com.controller.abc', 'com.controller.bcd',false);
-INSERT INTO content (content_id, item_id,count,content_name,comment,version,updated_function,created_function,delete_flag) 
+INSERT INTO content (content_id, my_item_id,count,content_name,comment,version,updated_function,created_function,delete_flag) 
 VALUES (8,1,888,'aaa','this is comment',1,'com.controller.abc', 'com.controller.bcd',false);
-INSERT INTO content (content_id, item_id,count,content_name,comment,version,updated_function,created_function,delete_flag) 
+INSERT INTO content (content_id, my_item_id,count,content_name,comment,version,updated_function,created_function,delete_flag) 
 VALUES (9,1,888,'aaa','this is comment',1,'com.controller.abc', 'com.controller.bcd',false);
-INSERT INTO content (content_id, item_id,count,content_name,comment,version,updated_function,created_function,delete_flag) 
+INSERT INTO content (content_id, my_item_id,count,content_name,comment,version,updated_function,created_function,delete_flag) 
 VALUES (10,1,888,'aaa','this is comment',1,'com.controller.abc', 'com.controller.bcd',false);
-INSERT INTO content (content_id, item_id,count,content_name,comment,version,updated_function,created_function,delete_flag) 
+INSERT INTO content (content_id, my_item_id,count,content_name,comment,version,updated_function,created_function,delete_flag) 
 VALUES (11,4,123,'★消されたデータ','this is comment',1,'com.controller.abc', 'com.controller.bcd',true);
 
 INSERT INTO content_detail (detail_id, content_content_id, detail_name, price) 

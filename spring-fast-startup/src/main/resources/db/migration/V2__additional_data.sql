@@ -25,7 +25,7 @@ CREATE TABLE mst_item (
 
 CREATE TABLE content (
  content_id bigint NOT NULL PRIMARY KEY,
- item_id INT,
+ my_item_id INT,
  content_name VARCHAR(100),count INT,comment VARCHAR(500),
  version bigint,
  updated_function VARCHAR(100),

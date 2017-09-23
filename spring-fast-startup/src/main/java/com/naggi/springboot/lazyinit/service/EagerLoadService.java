@@ -13,16 +13,16 @@ public class EagerLoadService {
 	
 	public EagerLoadService() {
 		log.warn("hello service constracter called, this class will be loaded eagaly all the time.");
-		try {
-			Thread.sleep(2_000);
-			final int LOOP_MAX = 3;
-			for(int i=0;i<=LOOP_MAX;i++){
-				Thread.sleep(1_000);
-				log.info("wait until"+ (LOOP_MAX-i) +"seconds");
-			}
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			Thread.sleep(2_000);
+//			final int LOOP_MAX = 3;
+//			for(int i=0;i<=LOOP_MAX;i++){
+//				Thread.sleep(1_000);
+//				log.info("wait until"+ (LOOP_MAX-i) +"seconds");
+//			}
+//		} catch (InterruptedException e) {
+//			e.printStackTrace();
+//		}
 	}
 	
 	public String sayHello(String clientName){

@@ -37,186 +37,183 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Data
 @NoArgsConstructor
-//@AllArgsConstructor
+// @AllArgsConstructor
 @Entity
 @Table(name = "Content")
-@NamedQueries({@NamedQuery(name = "Content.findAll2", query = "select m from Content m")})
-@NamedEntityGraph(name = "content.search",
-     includeAllAttributes=true,//Subgraphのために追加
-    attributeNodes = {
-        @NamedAttributeNode("mstItem")
-     //,@NamedAttributeNode(value="MstItemType",subgraph="MstItemType222") //Subgraphのために追加
-    // ,@NamedAttributeNode("comments")
-    }, subgraphs = {@NamedSubgraph(name = "MstItemType222",
-        attributeNodes = {
-        @NamedAttributeNode("mstItemType"),
-        @NamedAttributeNode("itemTypeId")
-    }
-        )}, subclassSubgraphs = {
-            @NamedSubgraph(
-                name = "notused",
-                type = MstItemType.class,
-                attributeNodes = {
-                    @NamedAttributeNode(value = "itemTypeId"),
-                }
-            )
-        }
-    )
+@NamedQueries({ @NamedQuery(name = "Content.findAll2", query = "select m from Content m") })
+@NamedEntityGraph(name = "content.search", includeAllAttributes = true, // Subgraphのために追加
+		attributeNodes = { @NamedAttributeNode("mstItem")
+		// ,@NamedAttributeNode(value="MstItemType",subgraph="MstItemType222")
+		// //Subgraphのために追加
+		// ,@NamedAttributeNode("comments")
+		}, subgraphs = { @NamedSubgraph(name = "MstItemType222", attributeNodes = { @NamedAttributeNode("mstItemType"), @NamedAttributeNode("itemTypeId") }) }, subclassSubgraphs = { @NamedSubgraph(name = "notused", type = MstItemType.class, attributeNodes = { @NamedAttributeNode(value = "itemTypeId"), }) })
 public class Content implements java.io.Serializable {
-  public Long getContentId() {
+
+	/**
+	   * 
+	   */
+	private static final long serialVersionUID = 1L;
+	@Id
+	private Long contentId;
+
+	@OneToMany(mappedBy = "content")
+	private List<ContentDetail> contentDetails;
+
+	@Formula(value = "select sum(t.price) from content_detail t where t.contentId = id")
+	private Long total;
+
+	private String contentName;
+	// private Integer itemId;
+	private Integer count;
+
+	private String comment;
+	@Version
+	private Long version;
+
+	private String createdFunction;
+	private String updatedFunction;
+
+	@CreatedDate
+	@DateTimeFormat(iso = ISO.DATE)
+	private java.sql.Timestamp createdDate;
+	@LastModifiedDate
+	@DateTimeFormat(iso = ISO.DATE)
+	private java.sql.Timestamp updatedDate;
+	@CreatedBy
+	private String createdBy;
+	@LastModifiedBy
+	private String updatedBy;
+
+	private Boolean deleteFlag;
+	@JsonIgnore
+	@ManyToOne(fetch = FetchType.LAZY)
+	// UserとCustomerを多対一の関係にする。
+	@JoinColumn(nullable = true, name = "my_item_id")
+	// Joincolumnで外部キーのカラム名を指定
+	private MstItem mstItem;
+
+	public Long getContentId() {
 		return contentId;
 	}
+
 	public void setContentId(Long contentId) {
 		this.contentId = contentId;
 	}
+
 	public List<ContentDetail> getContentDetails() {
 		return contentDetails;
 	}
+
 	public void setContentDetails(List<ContentDetail> contentDetails) {
 		this.contentDetails = contentDetails;
 	}
+
 	public Long getTotal() {
 		return total;
 	}
+
 	public void setTotal(Long total) {
 		this.total = total;
 	}
+
 	public String getContentName() {
 		return contentName;
 	}
+
 	public void setContentName(String contentName) {
 		this.contentName = contentName;
 	}
+
 	public Integer getCount() {
 		return count;
 	}
+
 	public void setCount(Integer count) {
 		this.count = count;
 	}
+
 	public String getComment() {
 		return comment;
 	}
+
 	public void setComment(String comment) {
 		this.comment = comment;
 	}
+
 	public Long getVersion() {
 		return version;
 	}
+
 	public void setVersion(Long version) {
 		this.version = version;
 	}
+
 	public String getCreatedFunction() {
 		return createdFunction;
 	}
+
 	public void setCreatedFunction(String createdFunction) {
 		this.createdFunction = createdFunction;
 	}
+
 	public String getUpdatedFunction() {
 		return updatedFunction;
 	}
+
 	public void setUpdatedFunction(String updatedFunction) {
 		this.updatedFunction = updatedFunction;
 	}
+
 	public java.sql.Timestamp getCreatedDate() {
 		return createdDate;
 	}
+
 	public void setCreatedDate(java.sql.Timestamp createdDate) {
 		this.createdDate = createdDate;
 	}
+
 	public java.sql.Timestamp getUpdatedDate() {
 		return updatedDate;
 	}
+
 	public void setUpdatedDate(java.sql.Timestamp updatedDate) {
 		this.updatedDate = updatedDate;
 	}
+
 	public String getCreatedBy() {
 		return createdBy;
 	}
+
 	public void setCreatedBy(String createdBy) {
 		this.createdBy = createdBy;
 	}
+
 	public String getUpdatedBy() {
 		return updatedBy;
 	}
+
 	public void setUpdatedBy(String updatedBy) {
 		this.updatedBy = updatedBy;
 	}
+
 	public Boolean getDeleteFlag() {
 		return deleteFlag;
 	}
+
 	public void setDeleteFlag(Boolean deleteFlag) {
 		this.deleteFlag = deleteFlag;
 	}
+
 	public MstItem getMstItem() {
 		return mstItem;
 	}
+
 	public void setMstItem(MstItem mstItem) {
 		this.mstItem = mstItem;
 	}
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-/**
-   * 
-   */
-  private static final long serialVersionUID = 1L;
-  @Id
-  private Long contentId;
- 
-  
-  @OneToMany(mappedBy = "content")
-  private List<ContentDetail> contentDetails;
-  
-  @Formula(value = "select sum(t.price) from content_detail t where t.contentId = id")
-  private Long total;
-  
-  private String contentName;
-  // private Integer itemId;
-  private Integer count;
-  
-  private String comment;
-  @Version
-  private Long version;
-  
-  private String createdFunction;
-  private String updatedFunction;
-  
-  @CreatedDate
-  @DateTimeFormat(iso = ISO.DATE)
-  private java.sql.Timestamp createdDate;
-  @LastModifiedDate
-  @DateTimeFormat(iso = ISO.DATE)
-  private java.sql.Timestamp updatedDate;
-  @CreatedBy
-  private String createdBy;
-  @LastModifiedBy
-  private String updatedBy;
-
-  private Boolean deleteFlag;
-  @JsonIgnore
-  @ManyToOne(fetch = FetchType.LAZY)
-  // UserとCustomerを多対一の関係にする。
-  @JoinColumn(nullable = true, name = "item_id")
-  // Joincolumnで外部キーのカラム名を指定
-  private MstItem mstItem;
-
-  // OneToManyのデータも追加してみる
-  // UserCommentとか？
-
-  // public Content(int contentId) {
-  // this.contentId = contentId;
-  // }
-
-  // public Content(int contentId, Integer basketId, Integer itemTypeId,
-  // Integer itemId, String comment, Float contentCount,
-  // Boolean deleteFlag) {
-  // this.contentId = contentId;
-  // this.basketId = basketId;
-  // this.itemTypeId = itemTypeId;
-  // this.itemId = itemId;
-  // this.comment = comment;
-  // this.contentCount = contentCount;
-  // this.deleteFlag = deleteFlag;
-  // }
 
 }
