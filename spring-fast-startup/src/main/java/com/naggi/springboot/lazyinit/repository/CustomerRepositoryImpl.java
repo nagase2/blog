@@ -14,7 +14,7 @@ public class CustomerRepositoryImpl implements CustomerRepositoryCustom{
 		public CustomerRepositoryImpl() {
 			log.info("★content repository constracter called.");
 			try {
-				final int LOOP_MAX = 5;
+				final int LOOP_MAX = 1;
 				for(int i=0;i<=LOOP_MAX;i++){
 					Thread.sleep(1_000);
 					log.warn("wait until"+ (LOOP_MAX-i) +"seconds");

@@ -38,13 +38,15 @@ public class UserController {
 	@RequestMapping(method = RequestMethod.GET)
 	List<User> list(Model model /* 画面に値を渡すために、Modelオブジェクトを使用する */) {
 		List<User> userList = userService.getUserAll();
-
-		log.info("list画面2211133");
-		// classpath:templates/+ビュー名＋.htmlが画面のPathとなる。この場合、classpath:templates/customers/list.html
 		return userList; // なんでここだけRedirectではないのか
-		/*
-		 * 仮説：Redirectではない時は、直接このURLにアクセスすることになる。そこには、ファイルが存在している必要がある。
-		 */
 	}
+	
+	@RequestMapping(value="/check",method = RequestMethod.GET)
+	InputForm check(@Validated InputForm inform) {
+		
+		log.info(inform.toString());
+		return inform;
+	}
+	
 }
 
