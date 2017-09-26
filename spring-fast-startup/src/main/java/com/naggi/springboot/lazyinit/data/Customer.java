@@ -20,7 +20,6 @@ import lombok.NoArgsConstructor;
 @Table(name = "customers")
 // テーブル名（＝クラス名）
 @Data
-@NoArgsConstructor
 // JPAの仕様で、EntityClassには引数のないデフォルトコンストラクタを作る必要がある。
 @AllArgsConstructor
 public class Customer {
