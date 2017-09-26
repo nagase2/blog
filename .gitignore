@@ -4,3 +4,8 @@ target/
 #IntelliJ
 .idea/
 *.iml
+bin/
+.gradle
+.project
+.classpath
+.settings
