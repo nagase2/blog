@@ -18,7 +18,7 @@ public class HeavyService {
 	public HeavyService() {
 		log.info("heavy service constracter has been called.");
 		try {
-			final int LOOP_MAX = 5;
+			final int LOOP_MAX = 0;
 			for(int i=0;i<=LOOP_MAX;i++){
 				Thread.sleep(1_000);
 				log.info("wait until"+ (LOOP_MAX-i) +"seconds");

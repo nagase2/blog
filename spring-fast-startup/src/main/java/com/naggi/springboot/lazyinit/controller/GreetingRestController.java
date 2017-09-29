@@ -17,6 +17,7 @@ import com.naggi.springboot.lazyinit.service.EagerLoadService;
 import com.naggi.springboot.lazyinit.service.LazyService;
 
 @RestController
+@RequestMapping("/rest")
 public class GreetingRestController {
 
 	@Autowired
