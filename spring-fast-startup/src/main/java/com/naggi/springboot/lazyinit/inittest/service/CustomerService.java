@@ -1,21 +1,20 @@
-package com.naggi.springboot.lazyinit.service;
+package com.naggi.springboot.lazyinit.inittest.service;
 
 import java.util.List;
 
+import org.apache.log4j.spi.LoggerFactory;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.naggi.springboot.lazyinit.data.Customer;
-import com.naggi.springboot.lazyinit.data.User;
-import com.naggi.springboot.lazyinit.repository.CustomerRepository;
+import com.naggi.springboot.lazyinit.inittest.data.Customer;
+import com.naggi.springboot.lazyinit.inittest.data.User;
+import com.naggi.springboot.lazyinit.inittest.repository.CustomerRepository;
 
 /**
  * カスタマのサービスクラス
@@ -29,21 +28,12 @@ import com.naggi.springboot.lazyinit.repository.CustomerRepository;
 @Transactional
 public class CustomerService {
 
-	private static final Logger log = LoggerFactory.getLogger(CustomerService.class);
+	//private static final Logger log = LoggerFactory.getLogger(CustomerService.class);
 
 	@Autowired
 	CustomerRepository customerRepository;
 	public CustomerService() {
 		log.warn("customer service constracter called, this class will be loaded eagaly all the time./");
-		try {
-			final int LOOP_MAX = 0;
-			for(int i=0;i<=LOOP_MAX;i++){
-				Thread.sleep(1_000);
-				log.info("wait until"+ (LOOP_MAX-i) +"seconds");
-			}
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
 	}
 	
 	/*

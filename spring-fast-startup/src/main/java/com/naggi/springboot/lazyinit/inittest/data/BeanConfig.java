@@ -1,4 +1,4 @@
-package com.naggi.springboot.lazyinit.data;
+package com.naggi.springboot.lazyinit.inittest.data;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package com.naggi.springboot.lazyinit.data;
+package com.naggi.springboot.lazyinit.inittest.data;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

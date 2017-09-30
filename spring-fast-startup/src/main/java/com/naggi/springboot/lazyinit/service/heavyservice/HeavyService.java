@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
-import com.naggi.springboot.lazyinit.data.Greeting;
+import com.naggi.springboot.lazyinit.inittest.data.Greeting;
 
 @Service
 public class HeavyService {
@@ -17,15 +17,15 @@ public class HeavyService {
 
 	public HeavyService() {
 		log.info("heavy service constracter has been called.");
-		try {
-			final int LOOP_MAX = 0;
-			for(int i=0;i<=LOOP_MAX;i++){
-				Thread.sleep(1_000);
-				log.info("wait until"+ (LOOP_MAX-i) +"seconds");
-			}
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			final int LOOP_MAX = 0;
+//			for(int i=0;i<=LOOP_MAX;i++){
+//				Thread.sleep(1_000);
+//				log.info("wait until"+ (LOOP_MAX-i) +"seconds");
+//			}
+//		} catch (InterruptedException e) {
+//			e.printStackTrace();
+//		}
 	}
 	
 

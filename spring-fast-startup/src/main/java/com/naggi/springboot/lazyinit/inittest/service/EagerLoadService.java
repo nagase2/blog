@@ -1,4 +1,4 @@
-package com.naggi.springboot.lazyinit.service;
+package com.naggi.springboot.lazyinit.inittest.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

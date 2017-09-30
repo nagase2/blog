@@ -1,15 +1,9 @@
 package com.naggi.springboot.lazyinit;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
-import org.springframework.context.annotation.ComponentScan;
-
-import com.naggi.springboot.lazyinit.controller.GreetingRestController;
-import com.naggi.springboot.lazyinit.data.Greeting;
-import com.naggi.springboot.lazyinit.service.EagerLoadService;
 
 
 @SpringBootApplication

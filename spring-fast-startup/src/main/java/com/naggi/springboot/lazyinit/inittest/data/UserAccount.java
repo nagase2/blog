@@ -1,4 +1,4 @@
-package com.naggi.springboot.lazyinit.data;
+package com.naggi.springboot.lazyinit.inittest.data;
 // default package
 // Generated 2015/08/20 19:15:06 by Hibernate Tools 4.3.1
 
