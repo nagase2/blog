@@ -24,9 +24,5 @@ public class Family {
     private String familyName;
     private String description;
 
-//  @OneToMany(mappedBy = "family")
-//    private final List<Person> members = new ArrayList<Person>();
-
-
 }
 

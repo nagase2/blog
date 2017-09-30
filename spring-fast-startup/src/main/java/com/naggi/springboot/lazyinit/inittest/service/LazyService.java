@@ -16,8 +16,9 @@ public class LazyService {
 
 	private static final Logger log = LoggerFactory.getLogger(LazyService.class);
 	
-	@PersistenceContext()
-	private EntityManager entityManager;
+	@PersistenceContext
+	private EntityManager em;
+	
 	Greeting gree;
 
 	public LazyService() {

@@ -11,7 +11,6 @@ INSERT INTO mst_item (item_id, item_name,item_type_id,item_expire_date,price,ver
 INSERT INTO mst_item (item_id, item_name,item_type_id,item_expire_date,price,version, delete_flag) VALUES (3,'日本の歴史３',4,'2015-08-21', 980,1,false);
 INSERT INTO mst_item (item_id, item_name,item_type_id,item_expire_date,price,version, delete_flag) VALUES (4,'レザージャケット',6,'2015-08-21', 20000,1,false);
 
-
 Insert into customers(id,first_name,last_name) values(1,'5nobita','nobi');
 Insert into customers(id,first_name,last_name) values(2,'nnnnn','nobi');
 Insert into customers(id,first_name,last_name) values(3,'llllllll','nobi');
@@ -59,6 +58,16 @@ VALUES (5,2,'No.1',300);
 INSERT INTO content_detail (detail_id, content_content_id, detail_name, price) 
 VALUES (6,3,'No.1',300);
  
-
 INSERT INTO users (username, encoded_password) VALUES ('user1', '$2a$10$1gJJgBlL75OIjkSgkYPXI.mV7ihEPjxIiCkXKBEc7/r9xUIjZyc9i' /*demo*/);
 INSERT INTO users (username, encoded_password) VALUES ('user2', '$2a$10$1gJJgBlL75OIjkSgkYPXI.mV7ihEPjxIiCkXKBEc7/r9xUIjZyc9i' /*demo*/);
+
+INSERT INTO job (id,salery,job_descr,owner_id) values(1,'1000000','this is basic job', 1);
+INSERT INTO job (id,salery,job_descr,owner_id) values(2,'200000','extingish fire when it occur', 2);
+
+INSERT INTO person (id,first_name,last_name,nonsense_field,family_id) VALUES('1','yamada','taro','xxxxxxxxxx','nagase');
+INSERT INTO person (id,first_name,last_name,nonsense_field,family_id) VALUES('2','suzuki','taro','xxxxxxxxxx','nagase');
+
+
+INSERT INTO family(fam_id,family_name,description) values('nagase','ナガセ','一般家庭');
+
+

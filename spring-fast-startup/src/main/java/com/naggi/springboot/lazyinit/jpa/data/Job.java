@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
 
 @Entity
@@ -22,8 +24,9 @@ public class Job {
     /**
      * 子から親の参照。実際にこのカラムはこのテーブルに存在する。これがないと、親からの関連も引くことができない
      */
-    @ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne(fetch=FetchType.EAGER)
     @JoinColumn(name="owner_id")
+    //@JsonIgnore  //Jsonのシリアライズ対象にしたくない場合はコレをつける。
     private Person jobMember;
 
  

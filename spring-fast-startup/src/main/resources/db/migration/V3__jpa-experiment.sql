@@ -24,7 +24,7 @@ CREATE TABLE job(
 
 
 CREATE TABLE todo (
- id bigserial  NOT NULL PRIMARY KEY,
+ id bigserial NOT NULL PRIMARY KEY,
  summary VARCHAR(100),
   description VARCHAR(100),
   owner_id bigint

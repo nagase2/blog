@@ -11,6 +11,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
 
 @Entity
@@ -24,15 +26,16 @@ public class Person {
 
     @ManyToOne()
     @JoinColumn(name="family_id")
+    @JsonIgnore
     private Family family;
 
     private String nonsenseField = "";
     
-    /**
-     * 親から子への参照。これは消すこともできる。
-     */
-    @OneToMany(mappedBy = "jobMember") //mappedByでは、子の変数名を指定する。
-    private List<Job> jobs = new ArrayList<Job>();
+//    /**
+//     * 親から子への参照。これは消すこともできる。
+//     */
+//    @OneToMany(mappedBy = "jobMember") //mappedByでは、子の変数名を指定する。
+//    private List<Job> jobs = new ArrayList<Job>();
 
     
 

@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.naggi.springboot.lazyinit.inittest.data.Greeting;
 import com.naggi.springboot.lazyinit.inittest.service.EagerLoadService;
 import com.naggi.springboot.lazyinit.inittest.service.LazyService;
-import com.naggi.springboot.lazyinit.service.heavyservice.HeavyService;
+import com.naggi.springboot.lazyinit.jpa.service.BasicService;
 
 @Controller
 public class IndexController {
