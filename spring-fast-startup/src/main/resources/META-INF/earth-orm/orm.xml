@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm
+      http://xmlns.jcp.org/xml/ns/persistence/orm_2_1.xsd"
+    version="2.1">
+
+  <persistence-unit-metadata>
+      <persistence-unit-defaults>
+          <entity-listeners>
+              <entity-listener class="org.springframework.data.jpa.domain.support.AuditingEntityListener"/>
+          </entity-listeners>
+      </persistence-unit-defaults>
+  </persistence-unit-metadata>
+<!-- 
+  <named-query name="find-all-order-slip-with-conditions">
+    <description>注文一覧検索のグリッドに表示する結果を取得します。</description>
+    <query><![CDATA[
+select o from OrderSlip o
+ where
+     o.deleted = false
+     and ( o.unitPriceNumber = :unitPriceNumber or :unitPriceNumber is null )
+     and ( o.group.id.unitCode = :groupCode or :groupCode is null )
+     and ( o.receiver.id.customerCode in :receiverCustomerCodes or :receiverCustomerCodes is null )
+     and ( o.supplier.id.customerCode in :supplierCustomerCodes or :supplierCustomerCodes is null )
+     and ( o.purchaser.id.customerCode in :purchaserCustomerCodes or :purchaserCustomerCodes is null )
+     and ( o.dueDate = :dueDate or cast(:dueDate as date ) is null )
+    ]]></query>
+    <hint name="org.hibernate.readOnly" value="true"/>
+  </named-query>
+
+ -->
+</entity-mappings>

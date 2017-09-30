@@ -1,4 +1,4 @@
-package com.naggi.springboot.lazyinit.repository;
+package com.naggi.springboot.lazyinit.inittest.repository;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.naggi.springboot.lazyinit.data.Content;
+import com.naggi.springboot.lazyinit.inittest.data.Content;
 
 @Repository
 @Transactional

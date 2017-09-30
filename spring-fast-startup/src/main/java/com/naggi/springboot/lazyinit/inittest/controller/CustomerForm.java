@@ -1,4 +1,4 @@
-package com.naggi.springboot.lazyinit.controller;
+package com.naggi.springboot.lazyinit.inittest.controller;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;

@@ -1,4 +1,4 @@
-package com.naggi.springboot.lazyinit.controller;
+package com.naggi.springboot.lazyinit.inittest.controller;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.naggi.springboot.lazyinit.data.Customer;
-import com.naggi.springboot.lazyinit.data.Greeting;
-import com.naggi.springboot.lazyinit.service.CustomerService;
-import com.naggi.springboot.lazyinit.service.EagerLoadService;
-import com.naggi.springboot.lazyinit.service.LazyService;
+import com.naggi.springboot.lazyinit.inittest.data.Customer;
+import com.naggi.springboot.lazyinit.inittest.data.Greeting;
+import com.naggi.springboot.lazyinit.inittest.service.CustomerService;
+import com.naggi.springboot.lazyinit.inittest.service.EagerLoadService;
+import com.naggi.springboot.lazyinit.inittest.service.LazyService;
 
 @RestController
 @RequestMapping("/rest")
@@ -39,7 +39,7 @@ public class GreetingRestController {
     @RequestMapping("/greeting2")
     public Greeting greeting2(@RequestParam(value="name", defaultValue="World") String name) {
     	
-    	System.out.println("aaa333qqqqwww3333");
+    	System.out.println("aaa333qqq3333");
         return new Greeting(counter.incrementAndGet(),
                             String.format(template, name));
     }

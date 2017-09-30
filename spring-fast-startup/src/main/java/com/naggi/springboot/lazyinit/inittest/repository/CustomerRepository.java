@@ -1,4 +1,4 @@
-package com.naggi.springboot.lazyinit.repository;
+package com.naggi.springboot.lazyinit.inittest.repository;
 
 import org.springframework.core.annotation.Order;
 import org.springframework.data.domain.Page;
@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.naggi.springboot.lazyinit.data.Customer;
+import com.naggi.springboot.lazyinit.inittest.data.Customer;
 
 @Repository
 @Transactional

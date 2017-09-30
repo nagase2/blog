@@ -1,11 +1,11 @@
-package com.naggi.springboot.lazyinit.repository;
+package com.naggi.springboot.lazyinit.inittest.repository;
 
 import org.springframework.context.annotation.Lazy;
 import org.springframework.core.annotation.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Component;
 
-import com.naggi.springboot.lazyinit.data.User;
+import com.naggi.springboot.lazyinit.inittest.data.User;
 
 @Component
 @Lazy

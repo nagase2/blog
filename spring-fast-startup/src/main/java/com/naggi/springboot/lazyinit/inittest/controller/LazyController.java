@@ -1,4 +1,4 @@
-package com.naggi.springboot.lazyinit.controller;
+package com.naggi.springboot.lazyinit.inittest.controller;
 
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.naggi.springboot.lazyinit.data.Greeting;
-import com.naggi.springboot.lazyinit.service.EagerLoadService;
-import com.naggi.springboot.lazyinit.service.LazyService;
+import com.naggi.springboot.lazyinit.inittest.data.Greeting;
+import com.naggi.springboot.lazyinit.inittest.service.EagerLoadService;
+import com.naggi.springboot.lazyinit.inittest.service.LazyService;
 import com.naggi.springboot.lazyinit.service.heavyservice.HeavyService;
 
 @Controller

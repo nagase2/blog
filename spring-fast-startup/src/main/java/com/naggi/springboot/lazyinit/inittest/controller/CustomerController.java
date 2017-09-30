@@ -1,4 +1,4 @@
-package com.naggi.springboot.lazyinit.controller;
+package com.naggi.springboot.lazyinit.inittest.controller;
 
 import java.util.List;
 
@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.naggi.springboot.lazyinit.data.Customer;
-import com.naggi.springboot.lazyinit.data.User;
-import com.naggi.springboot.lazyinit.service.CustomerService;
+import com.naggi.springboot.lazyinit.inittest.data.Customer;
+import com.naggi.springboot.lazyinit.inittest.data.User;
+import com.naggi.springboot.lazyinit.inittest.service.CustomerService;
 
 import lombok.extern.slf4j.Slf4j;
 

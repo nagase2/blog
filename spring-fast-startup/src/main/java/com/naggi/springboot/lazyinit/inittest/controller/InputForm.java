@@ -1,4 +1,4 @@
-package com.naggi.springboot.lazyinit.controller;
+package com.naggi.springboot.lazyinit.inittest.controller;
 
 import javax.annotation.CheckForNull;
 import javax.validation.constraints.Max;
