@@ -58,16 +58,28 @@ VALUES (5,2,'No.1',300);
 INSERT INTO content_detail (detail_id, content_content_id, detail_name, price) 
 VALUES (6,3,'No.1',300);
  
+ ----------------------------------------
+ 
 INSERT INTO users (username, encoded_password) VALUES ('user1', '$2a$10$1gJJgBlL75OIjkSgkYPXI.mV7ihEPjxIiCkXKBEc7/r9xUIjZyc9i' /*demo*/);
 INSERT INTO users (username, encoded_password) VALUES ('user2', '$2a$10$1gJJgBlL75OIjkSgkYPXI.mV7ihEPjxIiCkXKBEc7/r9xUIjZyc9i' /*demo*/);
 
-INSERT INTO job (id,salery,job_descr,owner_id) values(1,'1000000','this is basic job', 1);
-INSERT INTO job (id,salery,job_descr,owner_id) values(2,'200000','extingish fire when it occur', 2);
+INSERT INTO job (id,salery,job_descr,owner_id) values(1,'1000000','サラリーマン', 1);
+INSERT INTO job (id,salery,job_descr,owner_id) values(2,'200000','高校の先生', 2);
+INSERT INTO job (id,salery,job_descr,owner_id) values(3,'1000000','校長先生', 3);
+INSERT INTO job (id,salery,job_descr,owner_id) values(4,'200000','医者', 4);
+
 
 INSERT INTO person (id,first_name,last_name,nonsense_field,family_id) VALUES('1','yamada','taro','xxxxxxxxxx','nagase');
 INSERT INTO person (id,first_name,last_name,nonsense_field,family_id) VALUES('2','suzuki','taro','xxxxxxxxxx','nagase');
+INSERT INTO person (id,first_name,last_name,nonsense_field,family_id) VALUES('3','東海','花子','xxxxxxxxxx','nagase');
+INSERT INTO person (id,first_name,last_name,nonsense_field,family_id) VALUES('88','中部','次郎','xxxxxxxxxx','nagase');
+
 
 
 INSERT INTO family(fam_id,family_name,description) values('nagase','ナガセ','一般家庭');
 
+INSERT INTO todo(id,owner_id,summary,description) values(1,1,'走る','外を走る。目標30分以上');
+INSERT INTO todo(id,owner_id,summary,description) values(2,2,'買い物に行く','今日の晩御飯を買いに行く');
+INSERT INTO todo(id,owner_id,summary,description) values(3,1,'洗濯する','洗濯をして干す');
+INSERT INTO todo(id,owner_id,summary,description) values(99,2,'なんにもしない','この目標は誰が登録したかわからない。（ユーザ不在）');
 

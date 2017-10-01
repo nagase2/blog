@@ -2,6 +2,10 @@ package com.naggi.springboot.lazyinit.jpa.controller;
 
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
@@ -21,7 +25,9 @@ import com.naggi.springboot.lazyinit.inittest.data.Customer;
 import com.naggi.springboot.lazyinit.inittest.data.User;
 import com.naggi.springboot.lazyinit.inittest.service.CustomerService;
 import com.naggi.springboot.lazyinit.inittest.service.LazyUserService;
+import com.naggi.springboot.lazyinit.jpa.data.BasicModel;
 import com.naggi.springboot.lazyinit.jpa.data.Job;
+import com.naggi.springboot.lazyinit.jpa.data.Todo;
 import com.naggi.springboot.lazyinit.jpa.service.BasicService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -31,6 +37,9 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class BasicController {
 	private static final Logger log = LoggerFactory.getLogger(BasicController.class);
+	
+	@PersistenceContext
+	private EntityManager em;
 	
 	@Autowired
 	BasicService basicService;
@@ -45,13 +54,58 @@ public class BasicController {
 		List<Job> jobs = basicService.generalRetrieveData();
 		return jobs; 
 	}
+
+	@RequestMapping(method = RequestMethod.GET, value="/todo1")
+	List<Todo> retrieveTodo1(Model model){
+		log.info("todo一覧が呼ばれたよ");
+		return basicService.retrieveTodos1();
+	}
 	
-//	@RequestMapping(value="/check",method = RequestMethod.GET)
-//	InputForm check(@Validated InputForm inform) {
-//		
-//		log.info(inform.toString());
-//		return inform;
-//	}
+	@RequestMapping(method = RequestMethod.GET, value="/todo2")
+	List<BasicModel> retrieveTodo2(Model model){
+		log.info("todo2一覧が呼ばれたよ");
+		return basicService.retrieveTodos2();
+	}
 	
+	/**
+	 * SQLでEntity上関連がない項目と関連を貼って取得する。(この例では、LEFTJOINを指定、INNERに置き換えればINNER)
+	 * ができる。
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(method = RequestMethod.GET, value="/todo3")
+	List<BasicModel> retrieveTodo3(Model model){
+		log.info("todo3一覧が呼ばれたよ");
+		Query query = em.createNativeQuery(
+				"SELECT job.id as value1,job.job_descr as value2,todo.summary as value3"
+				+ " FROM job LEFT JOIN todo on job.id = todo.id"
+				);
+		@SuppressWarnings("unchecked")
+		List<BasicModel> results = query.getResultList();
+		
+		return results;
+	}	
+	/**
+	 * JPQLでEntity上関連がない項目と関連を貼って取得する。(この例では、LEFTJOINを指定、INNERに置き換えればINNER)
+	 * ができる。
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(method = RequestMethod.GET, value="/todo4")
+	List<BasicModel> retrieveTodo4(Model model){
+		log.info("todo4一覧が呼ばれたよ");
+		Query query = em.createQuery(
+				"SELECT j.id as value1,j.jobDescr as value2"
+				+ " FROM Job j JOIN Todo t ON j.id = t.id"
+				);
+		@SuppressWarnings("unchecked")
+		List<BasicModel> results = query.getResultList();
+		
+		return results;
+	}
+	
+	
+	
+
 }
 
