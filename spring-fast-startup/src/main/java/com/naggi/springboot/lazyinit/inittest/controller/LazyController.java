@@ -31,7 +31,7 @@ public class LazyController {
 	private static final Logger log = LoggerFactory.getLogger(LazyController.class);
 
   
-    @RequestMapping("/lazy")
+    @RequestMapping("/")
     @ResponseBody
     public String callLazy(){
     	gree.setId(123);

@@ -2,6 +2,7 @@ package com.naggi.springboot.lazyinit.jpa.data;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,14 +22,16 @@ public class Person {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+	@Column(name="first_name")
     private String firstName;
+	@Column(name="last_name")
     private String lastName;
 
     @ManyToOne()
     @JoinColumn(name="family_id")
     @JsonIgnore
     private Family family;
-
+    @Column(name="nonsense_field")
     private String nonsenseField = "";
     
 //    /**

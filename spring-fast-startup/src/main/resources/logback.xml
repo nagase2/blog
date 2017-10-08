@@ -2,13 +2,13 @@
 <configuration debug="false">
 	<!--  <include resource="org/springframework/boot/logging/logback/base.xml" />
 -->
-<!-- 
+
 	<logger name="jdbc" level="OFF" /> 
 	<logger name="jdbc.sqltiming" level="debug" />
 	<logger name="jdbc.sqlonly" level="debug" />
-	-->
+	
 	  <logger name="org.hibernate.type" level="ALL" />
-  <logger name="org.hibernate" level="DEBUG" />
+   <logger name="org.hibernate.sql" level="DEBUG" />
 
 	<property name="ACCESS_LOG_PATTERN" value="%d{yyyy-MM-dd HH.mm.ss},%p,,%C,%M,%caller{1}" 
 		/>

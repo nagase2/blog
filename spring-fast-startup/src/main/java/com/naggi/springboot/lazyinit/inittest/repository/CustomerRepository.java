@@ -1,5 +1,7 @@
 package com.naggi.springboot.lazyinit.inittest.repository;
 
+import javax.persistence.Table;
+
 import org.springframework.core.annotation.Order;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -13,6 +15,7 @@ import com.naggi.springboot.lazyinit.inittest.data.Customer;
 @Repository
 @Transactional
 @Order(10)
+@Table(name="customers")
 public interface CustomerRepository extends JpaRepository<Customer, Integer>,CustomerRepositoryCustom {
 
   // @Query(value="select id,first_name,last_name,address from customers order by first_name desc",nativeQuery=true)
