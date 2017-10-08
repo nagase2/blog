@@ -7,9 +7,12 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
+import org.springframework.context.annotation.ComponentScan;
+
 import com.naggi.springboot.lazyinit.jpa.data.Todo;
 
 
+@ComponentScan(basePackageClasses = LazyApplication.class)
 public class JpaMain {
     private static final String PERSISTENCE_UNIT_NAME = "todos";
     private static EntityManagerFactory factory;

@@ -28,15 +28,15 @@ public class Customer {
   @GeneratedValue(strategy = GenerationType.AUTO)
   // 主キーがDBで自動裁判されることをこのアノテーションで示す
   private Integer id;
-  @Column(nullable = false)
+  @Column(nullable = false,name="first_name")
   // このカラムの制約事項を指定
   private String firstName;
-  @Column(nullable = false)
+  @Column(nullable = false,name="last_name")
   private String lastName;
   
-  //@ManyToOne(fetch = FetchType.EAGER)
-  @JsonIgnore
-  @ManyToOne(fetch = FetchType.LAZY) //これをOnにするとRESTでコケる
+//  @ManyToOne(fetch = FetchType.EAGER)
+ // @JsonIgnore
+  @ManyToOne(fetch = FetchType.EAGER) //これをOnにするとRESTでコケる
   // UserとCustomerを多対一の関係にする。
   @JoinColumn(nullable = true, name = "username")
   // Joincolumnで外部キーのカラム名を指定
@@ -68,13 +68,5 @@ public class Customer {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
-	}
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
 	}
 }
