@@ -3,12 +3,16 @@ package com.naggi.springboot.lazyinit;
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
+
+import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -18,16 +22,23 @@ import com.naggi.springboot.lazyinit.jpa.data.Family;
 import com.naggi.springboot.lazyinit.jpa.data.Job;
 import com.naggi.springboot.lazyinit.jpa.data.Todo;
 
+import lombok.extern.slf4j.Slf4j;
+
+
+
 /**
  * @author Chandan Singh
  *
  */
-public class JPADemo {
+public class StandaloneJPAInitializer {
+	
+	private  Logger log = LoggerFactory.getLogger(StandaloneJPAInitializer.class);
+	
 	public static void main(String[] args) throws JsonProcessingException {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("jcg-JPA");
 		EntityManager em = emf.createEntityManager();
 
-		JPADemo self = new JPADemo();
+		StandaloneJPAInitializer self = new StandaloneJPAInitializer();
 
 		self.persistOneInstanceWithJPA(em);
 
@@ -47,12 +58,12 @@ public class JPADemo {
 	 * @throws JsonProcessingException
 	 */
 	public void persistOneInstanceWithJPA(EntityManager em) throws JsonProcessingException {
-
+		
 		em.getTransaction().begin();
 		Family newFamily = new Family();
 		newFamily.setFamId(UUID.randomUUID().toString());
 		newFamily.setFamilyName("test family name");
-		System.out.println("COMIITING");
+		log.info("★COMIITING");
 
 		em.persist(newFamily);
 		em.getTransaction().commit();
