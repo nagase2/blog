@@ -10,6 +10,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
@@ -36,8 +39,9 @@ public class Customer {
   
 //  @ManyToOne(fetch = FetchType.EAGER)
  // @JsonIgnore
-  @ManyToOne(fetch = FetchType.EAGER) //これをOnにするとRESTでコケる
+  @ManyToOne(fetch = FetchType.LAZY) //これをOnにするとRESTでコケる
   // UserとCustomerを多対一の関係にする。
+  @NotFound(action = NotFoundAction.IGNORE)
   @JoinColumn(nullable = true, name = "username")
   // Joincolumnで外部キーのカラム名を指定
   private User user;
