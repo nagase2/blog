@@ -13,16 +13,19 @@ class StringFilterSpec extends Specification{
         instance = new StringFilter()
     }
 
+	
 
     def "フィルタに一致するパターンのテスト"() {
         expect:
         instance.doFilter(a) == true
 
+		
         where:
-        "a_flg"
-        "ss_flg_s"
-        "x_flgxx"
-        "aaxx_flg_aaa"
+		a | b
+        "a_flg" | 2
+		"a_flg" | 2
+		"a_flg" | 2
+		
     }
 
     def "フィルターに一致しないパターンのテスト"() {
@@ -30,9 +33,9 @@ class StringFilterSpec extends Specification{
         instance.doFilter(a) == false
 
         where:
-        "a_fslg"
-        "ss_f3lg_s"
-        "x_fldgxx"
-        "aaxx_fl3g_aaa"
+		a | b
+        "a_fleg" | 2
+		"a_fklge" | 2
+		"a_fl_gee" | 2
     }
 }
