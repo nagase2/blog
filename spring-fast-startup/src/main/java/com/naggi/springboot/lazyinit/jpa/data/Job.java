@@ -27,7 +27,7 @@ public class Job {
      * 子から親の参照。実際にこのカラムはこのテーブルに存在する。これがないと、親からの関連も引くことができない
      */
     @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="owner_id")
+    @JoinColumn(name="owner_id",nullable=true)
     //@JsonIgnore  //Jsonのシリアライズ対象にしたくない場合はコレをつける。
     private Person jobMember;
 

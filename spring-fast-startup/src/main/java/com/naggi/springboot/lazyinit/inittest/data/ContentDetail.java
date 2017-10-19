@@ -1,5 +1,6 @@
 package com.naggi.springboot.lazyinit.inittest.data;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -34,9 +35,10 @@ public class ContentDetail implements java.io.Serializable {
    */
   private static final long serialVersionUID = 1L;
   @Id
+  @Column(name="detail_id")
   private Long detailId;
   
-  
+  @Column(name="detail_name")
   private String detailName;
   private int price;
   
@@ -45,20 +47,27 @@ public class ContentDetail implements java.io.Serializable {
   
   @Version
   private Long version;
+  @Column(name="created_function")
   private String createdFunction;
+  @Column(name="updated_function")
   private String updatedFunction;
   
   @CreatedDate
   @DateTimeFormat(iso = ISO.DATE)
+  @Column(name="created_date")
   private java.sql.Timestamp createdDate;
+  
   @LastModifiedDate
   @DateTimeFormat(iso = ISO.DATE)
+  @Column(name="updated_date")
   private java.sql.Timestamp updatedDate;
   @CreatedBy
+  @Column(name="created_by")
   private String createdBy;
   @LastModifiedBy
+  @Column(name="updated_by")
   private String updatedBy;
-
+  @Column(name="delete_flag")
   private Boolean deleteFlag;
 
 
