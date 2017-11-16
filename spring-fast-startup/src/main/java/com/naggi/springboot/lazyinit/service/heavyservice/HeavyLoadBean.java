@@ -13,8 +13,8 @@ import lombok.Data;
 public class HeavyLoadBean {
 	public HeavyLoadBean(String id, int count) {
 		int waitSec = 2000;
-		Log.info("WAIT for " + waitSec + "sec...");
-		System.out.println("WAIT for " + waitSec + "sec...");
+		Log.info("WAIT for " + waitSec + "sec...for "+id);
+		System.out.println("WAIT for " + waitSec + "sec...for "+id);
 		try {
 			Thread.sleep(waitSec);
 		} catch (InterruptedException e) {
