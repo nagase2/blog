@@ -1,7 +1,7 @@
 package com.nagase.experiment
-import spock.lang.*
-
 import com.hoge.spocktest.*
+
+import spock.lang.*
 
 
 
@@ -35,6 +35,7 @@ class StringFilterSpec extends Specification{
     def "フィルターに一致しないパターンのテスト"() {
         expect:
         instance.doFilter(a) == false
+		instance.doFilster(a) == false
 
         where:
 		a | b
