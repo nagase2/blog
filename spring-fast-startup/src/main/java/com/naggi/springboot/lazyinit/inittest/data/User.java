@@ -30,6 +30,8 @@ public class User {
 	@Id
 	// usernameを主キーにする
 	private String username;
+	int age;
+	
 	@JsonIgnore
 	@Column(nullable = false,name="encoded_password")
 	private String encodedPassword;
