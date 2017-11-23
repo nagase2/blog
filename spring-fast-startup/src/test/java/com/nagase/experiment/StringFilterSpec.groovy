@@ -35,7 +35,6 @@ class StringFilterSpec extends Specification{
     def "フィルターに一致しないパターンのテスト"() {
         expect:
         instance.doFilter(a) == false
-		instance.doFilster(a) == false
 
         where:
 		a | b
