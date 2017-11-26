@@ -1,3 +1,7 @@
+/**
+ * 普通にJavascripを実行するだけのファイル
+ */
+
 var dt = require('./myfirstmodule')
 
 console.log("現在の時刻は"+dt.myDateTime());
